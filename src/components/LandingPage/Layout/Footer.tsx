@@ -11,20 +11,17 @@ const Footer = () => {
         <div className="space-y-[24px] lg:space-y-[32px]">
           <h4 className="text-[#A8A7A6] text-[20px] lg:text-[24px]">Explore</h4>
           <div className="text-[#535353] text-[16px] lg:text-[20px] space-y-[24px] lg:space-y-[32px] flex flex-col">
-            <Link href="/">
+            <Link href="/#home">
               <p>Home</p>
             </Link>
-            <Link href="/">
+            <Link href="/#about">
               <p>About</p>
             </Link>
-            <Link href="/">
+            <Link href="/#how-it-works">
               <p>How it works</p>
             </Link>
-            <Link href="/">
+            <Link href="/#faq">
               <p>FAQs</p>
-            </Link>
-            <Link href="/">
-              <p>Pricing</p>
             </Link>
           </div>
         </div>
