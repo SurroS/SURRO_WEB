@@ -3,38 +3,70 @@ import StepCard from "./StepCard";
 
 const HowItWorks = () => {
   return (
-    <div id="how-it-works" className="p-5 lg:p-10 mt-[2rem]">
-      <div className="w-full lg:w-[450px] mx-auto">
-        <h2 className="text-[32px] lg:text-[64px] text-[#464646] font-bold text-center">
-          How It Works.
+    <section
+      id="how-it-works"
+      className="
+        px-5 lg:px-10 
+        mt-16 lg:mt-24 
+        max-w-6xl mx-auto
+      "
+    >
+      {/* Heading */}
+      <div className="w-full max-w-xl mx-auto text-center">
+        <h2
+          className="
+            text-[28px] md:text-[40px] lg:text-[50px] 
+            text-[#464646] font-semibold leading-tight
+          "
+        >
+          How It Works
         </h2>
-        <p className="text-[#9E9E9E] text-[16px] lg:text-[24px] text-center">
-          Your journey to happy parenthood begins with these steps.
+
+        <p
+          className="
+            text-[#838383]
+            text-[15px] md:text-sub-heading lg:text-[22px] 
+            mt-3 leading-relaxed
+          "
+        >
+          Your path to parenthood is in four simple steps.
         </p>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-10">
+
+      {/* Steps */}
+      <div
+        className=" 
+          grid 
+          grid-cols-1 md:grid-cols-2 
+          gap-6 lg:gap-10 
+          mt-12 lg:mt-16
+        "
+      >
         <StepCard
           step={1}
           title="Create Your Profile"
-          desc="You can build personalized profiles to share your story, background, and what you’re looking for."
+          desc="Share your story, background, and hopes for the journey ahead — it helps you connect with the right people."
         />
+
         <StepCard
           step={2}
-          title="Verify your identity"
-          desc="To ensure a safe and trusted platform, we will ask you to verify your identity and status."
+          title="Verify Your Identity"
+          desc="For everyone’s safety, we verify each account to keep the platform trustworthy and secure."
         />
+
         <StepCard
           step={3}
           title="Get Matched"
-          desc="Our platform helps you find the right fit whether you’re a parent seeking a surrogate or a surrogate offering your gift of hope."
+          desc="We guide parents and surrogates toward the right fit — thoughtful, respectful, and aligned."
         />
+
         <StepCard
           step={4}
-          title="Start the Journey"
-          desc="With our resources, guidance, and community, you’ll take the next steps together confidently and supported."
+          title="Begin the Journey"
+          desc="With guidance, resources, and steady support, you take each step with clarity and confidence."
         />
       </div>
-    </div>
+    </section>
   );
 };
 

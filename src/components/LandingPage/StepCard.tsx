@@ -1,6 +1,4 @@
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 interface Props {
@@ -9,24 +7,32 @@ interface Props {
   desc: string;
 }
 
-const StepCard = (props: Props) => {
+const StepCard = ({ step, title, desc }: Props) => {
   return (
-    <div className="p-[30px] pr-0 pb-0 bg-[#FBF8FD] rounded-[30px]">
-      <div className="mb-5 pr-[30px]">
-        <h4 className="text-[20px] lg:text-[32px] text-[#080833] ">
-          {props.title}
+    <div
+      className="
+        bg-[#f6effb] rounded-[20px]
+        p-6 lg:p-10 pb-0
+        shadow-lg hover:shadow-xl transition-shadow
+      "
+    >
+      <div className=" pr-4">
+        <h4 className="text-[20px] lg:text-[32px] font-semibold text-[#080833] leading-tight">
+          {title}
         </h4>
-        <p className="text-[16px] lg:text-[24px] text-[#9E9E9E]">
-          {props.desc}
+
+        <p className="mt-2 text-[16px] lg:text-[22px] text-[#838383] leading-relaxed">
+          {desc}
         </p>
       </div>
 
-      <div className="w-full flex justify-end">
+      <div className="flex w-full justify-end">
         <Image
-          src={`/images/number${props.step}.svg`}
-          alt=""
-          width={100}
-          height={500}
+          src={`/images/number${step}.svg`}
+          alt={`Step ${step}`}
+          width={50}
+          height={50}
+          className="w-10 h-10 lg:w-20 lg:h-20"
         />
       </div>
     </div>
@@ -34,3 +40,4 @@ const StepCard = (props: Props) => {
 };
 
 export default StepCard;
+   

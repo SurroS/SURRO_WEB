@@ -1,10 +1,11 @@
-import { Plus } from "lucide-react";
+import { Plus, Rocket } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
 const SafeSupportedSecure = () => {
   return (
-    <div className="bg-[#FBF8FC] rounded-[40px] m-2 lg:m-10 my-[2rem] relative h-[955px] lg:h-[610px]">
+    <div className="bg-[#FBF8FC] rounded-[40px] m-2 lg:m-10 my-8 relative h-[650px] lg:h-[610px]">
+      {/* Background Vectors */}
       <Image
         src={"/vector/vector1.svg"}
         alt=""
@@ -21,37 +22,61 @@ const SafeSupportedSecure = () => {
         fetchPriority="high"
         className="w-full h-full block lg:hidden"
       />
-      <div className="absolute top-0 left-0 w-full h-full p-5 lg:p-10">
+
+      {/* Content */}
+      <div className="absolute top-0 left-0 w-full h-full p-5 lg:p-8">
         <div className="lg:w-[680px]">
-          <h1 className="text-[#464646] text-[32px] lg:text-[64px]">
-            Safe. Supported. Secured
+          <h1 className="text-[#464646] text-[25px] lg:text-[60px] leading-tight">
+            Safe. Supported. Secure.
           </h1>
-          <p className="text-[#9E9E9E] text-[16px] lg:text-[32px]">
-            We know this journey requires trust. That’s why our platform
-            ensures:
+
+          <p className="text-[#7A7A7A]  text-[16px] lg:text-[24px] mt-2 leading-relaxed">
+            This journey asks for trust — and you deserve to feel protected at
+            every step. Surro is built with care, clarity, and the security that
+            brings real peace of mind.
           </p>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-[20px] mt-10">
+
+        {/* Feature Cards */}
+        <div className="grid elevate grid-cols-1 lg:grid-cols-3 gap-5 mt-5 ">
           {[
-            "Secure communication between parents and surrogates",
-            "Profile verification for authenticity",
-            "Resources and support from start to finish",
+            "Private, protected conversations between parents and surrogates",
+            "Verified profiles for genuine, trustworthy connections",
+            "Guidance, tools, and support from the first step to the last",
           ].map((item, index) => (
             <div
               key={item}
               className={`${
-                index === 1
-                  ? "bg-gradient-to-r from-[#CDCDFB] to-[#F5DDFF]"
-                  : "bg-[#FFFFFFB2]"
-              } rounded-[30px] p-[30px] backdrop-blur-[50] flex flex-col justify-between gap-[10px] lg:gap-[50px]`}>
-              <p className="bg-gradient-to-r from-[#6C6CD3] to-[#092D7B] text-transparent bg-clip-text text-[24px] lg:text-[32px] w-full lg:w-[90%]">
+                index === 1 
+                  ? "bg-linear-to-r from-[#CDCDFB] to-[#F5DDFF]"
+                  : "bg-white/70"
+              } rounded-[10px] lg:rounded-[20px] 
+              shadow-lg hover:shadow-xl transition-shadow
+      p-3 lg:p-10 
+      backdrop-blur-2xl 
+      flex flex-col justify-between 
+      gap-4 lg:gap-10`}
+            >
+              <p
+                className=" font-bold bg-linear-to-r from-[#6C6CD3] to-[#092D7B] 
+        text-transparent bg-clip-text 
+        text-[16px] md:text-sub-heading lg:text-[24px] 
+        leading-snug"
+              >
                 {item}
               </p>
+
               <div
-                className={`rounded-full h-[58px] w-[58px] flex items-center justify-center self-end ${
-                  index === 1 ? "bg-white" : "bg-[#EDEDED]"
-                }`}>
-                <Plus color="#6C6CD3" size={30} />
+                className={`flex items-center justify-center self-end 
+        ${index === 1 ? "bg-white" : "bg-[#EDEDED]"} 
+        h-10 w-10 md:h-12 md:w-12 lg:h-[45px] lg:w-[45px] 
+        rounded-full`}
+              >
+                <Rocket
+                  size={22}
+                  className=" size-24 md:size-26 lg:size-30 opacity-60"
+                  color="#6C6CD3"
+                />
               </div>
             </div>
           ))}

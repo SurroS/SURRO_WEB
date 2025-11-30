@@ -1,69 +1,123 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import {
+  FaTwitter,
+  FaLinkedinIn,
+  FaInstagram,
+  FaFacebookF,
+  FaEnvelope,
+} from "react-icons/fa";
 
-const Footer = () => {
+const footerSections = [
+  {
+    title: "Explore",
+    links: [
+      { label: "Home", href: "/#home" },
+      { label: "About", href: "/#about" },
+      { label: "How it works", href: "/#how-it-works" },
+      { label: "FAQs", href: "/#faq" },
+    ],
+  },
+  {
+    title: "Get in touch",
+    links: [
+      { label: "Terms and Conditions", href: "/" },
+      { label: "Privacy policy", href: "/" },
+      { label: "Contact", href: "/" },
+    ],
+  },
+];
+
+export default function Footer() {
   return (
-    <footer className="p-5 lg:p-10 my-[2rem] space-y-[48px] grid">
-      <h1 className="bg-gradient-to-r from-[#6C6CD3] to-[#092D7B] text-transparent bg-clip-text text-[48px]">
+    <footer className="p-6 lg:p-12 mt-10 bg-white border-t">
+      {/* Logo */}
+      <h1 className="bg-linear-to-r from-[#6C6CD3] to-[#092D7B] text-transparent bg-clip-text text-4xl lg:text-5xl mb-10">
         Surro
       </h1>
-      <div className="grid grid-cols-2 gap-20 lg:flex justify-between">
-        <div className="space-y-[24px] lg:space-y-[32px]">
-          <h4 className="text-[#A8A7A6] text-[20px] lg:text-[24px]">Explore</h4>
-          <div className="text-[#535353] text-[16px] lg:text-[20px] space-y-[24px] lg:space-y-[32px] flex flex-col">
-            <Link href="/#home">
-              <p>Home</p>
+
+      <div className="grid md:grid-cols-4 gap-12">
+        {/* Explore + Legal Sections */}
+        {footerSections.map((section) => (
+          <div key={section.title} className="space-y-5">
+            <h4 className="text-[#A8A7A6] text-xl">{section.title}</h4>
+
+            <div className="flex flex-col space-y-4 text-[#535353] text-lg">
+              {section.links.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="hover:text-[#6C6CD3] transition"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        ))}
+
+        {/* Social + Newsletter */}
+        <div className="space-y-6">
+          <h4 className="text-[#A8A7A6] text-xl">Connect</h4>
+
+          {/* Social Icons */}
+          <div className="flex space-x-5 text-[#535353]">
+            <Link
+              href="https://twitter.com/SurroSantara"
+              className="hover:text-[#6C6CD3] transition"
+            >
+              <FaTwitter size={22} />
             </Link>
-            <Link href="/#about">
-              <p>About</p>
+            <Link
+              href="https://www.linkedin.com/company/108860155/"
+              className="hover:text-[#6C6CD3] transition"
+            >
+              <FaLinkedinIn size={22} />
             </Link>
-            <Link href="/#how-it-works">
-              <p>How it works</p>
+            <Link
+              href="https://www.instagram.com/surrosantara/"
+              className="hover:text-[#6C6CD3] transition"
+            >
+              <FaInstagram size={22} />
             </Link>
-            <Link href="/#faq">
-              <p>FAQs</p>
+            <Link
+              href="https://www.facebook.com/profile.php?id=61580441493572"
+              className="hover:text-[#6C6CD3] transition"
+            >
+              <FaFacebookF size={22} />
             </Link>
           </div>
-        </div>
-        <div className="space-y-[32px] lg:space-y-[32px]">
-          <h4 className="text-[#A8A7A6] text-[20px] lg:text-[24px]">Socials</h4>
-          <div className="text-[#535353] text-[16px] lg:text-[20px] grid space-y-[24px] lg:space-y-[32px]">
-            <Link href="/">
-              <p>X(Twitter)</p>
-            </Link>
-            <Link href="/">
-              <p>LinkedIn</p>
-            </Link>
-            <Link href="/">
-              <p>Instagram</p>
-            </Link>
-            <Link href="/">
-              <p>Facebook</p>
-            </Link>
-          </div>
-        </div>
-        <div className="space-y-[32px] lg:space-y-[32px]">
-          <h4 className="text-[#A8A7A6] text-[20px] lg:text-[24px]">
-            Get in touch
-          </h4>
-          <div className="text-[#535353] text-[16px] lg:text-[20px] grid space-y-[24px] lg:space-y-[32px]">
-            <Link href="/">
-              <p>Terms and Conditions</p>
-            </Link>
-            <Link href="/">
-              <p>Privacy policy</p>
-            </Link>
-            <Link href="/">
-              <p>Contact</p>
-            </Link>
+
+          {/* Newsletter */}
+          <div className="space-y-4">
+            <p className="text-[#535353]">
+              Subscribe for updates & announcements.
+            </p>
+
+            <form
+              className="flex items-center space-x-2"
+              onSubmit={(e) => e.preventDefault()}
+            >
+              <input
+                type="email"
+                placeholder="Your email"
+                className="flex-1 border border-[#ccc] rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#6C6CD3]"
+              />
+              <button
+                type="submit"
+                className="bg-linear-to-r from-[#6C6CD3] to-[#092D7B] text-white px-5 py-2 rounded-lg hover:opacity-90 transition"
+              >
+                <FaEnvelope size={18} />
+              </button>
+            </form>
           </div>
         </div>
       </div>
-      <small className="text-[#A8A7A6] text-[13px] lg:text-[16px] mx-auto">
-        Copyright @ Surro 2025. All rights reserved
-      </small>
+
+      {/* Copyright */}
+      <div className="text-center mt-12 text-[#A8A7A6] text-sm lg:text-base">
+        © Surro 2025. All rights reserved.
+      </div>
     </footer>
   );
-};
-
-export default Footer;
+}

@@ -16,7 +16,7 @@ export default function LandingPage() {
   return (
     <main>
       <Navabar />
-      <div className="h-[var(--navbar-height)]" />
+      <div className="h-(--navbar-height)" />
       <HeroSection />
       <About />
       <SafeSupportedSecure />
